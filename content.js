@@ -53,6 +53,8 @@ function containsSymb(str) {
     return symbs.test(str);
 }
 
+var commands = [];
+
 function transformtype(){
     var inputs = document.getElementsByTagName('input');
     var selectedimp;
@@ -62,14 +64,28 @@ function transformtype(){
             thisinput.addEventListener("focus", function(event){
                 console.log(event);
                 selectedimp = event.target;
+                commands = [];
             });
             thisinput.addEventListener("keydown", function(event){
                 console.log(event.keyCode);
                 if(isLetter(String.fromCharCode(event.keyCode))){
-                    event.preventDefault();
-                    addtoinput(selectedimp,String.fromCharCode(event.keyCode));
-                    console.log(keyCounter);
+                    if(commands.length == 0){
+                        event.preventDefault();
+                        addtoinput(selectedimp,String.fromCharCode(event.keyCode));
+                    }
+                }else{
+                    if(commands.indexOf(event.keyCode) == -1){
+                        commands.push(event.keyCode);
+                    }
                 }
+                console.log("length: " + commands.length);
+            });
+            thisinput.addEventListener("keyup", function(event){
+                var commandInd = commands.indexOf(event.keyCode);
+                if(commandInd > -1){
+                    commands.splice(commandInd,1);
+                }
+                console.log("length: " + commands.length);
             });
         }
     }
