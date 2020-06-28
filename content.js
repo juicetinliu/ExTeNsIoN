@@ -5,6 +5,7 @@ chrome.storage.sync.get('yesno', function(data) {
     var current = data.yesno;
     if(current == 1){
         transformtext();
+        transformtype();
     }
 });
 
@@ -50,4 +51,37 @@ function isLetter(str) {
 
 function containsSymb(str) {
     return symbs.test(str);
+}
+
+function transformtype(){
+    var inputs = document.getElementsByTagName('input');
+    var selectedimp;
+    for (var i = 0; i < inputs.length; i++) {
+        var thisinput = inputs[i];
+        if(thisinput.type == 'text' || thisinput.type == 'search'){
+            thisinput.addEventListener("focus", function(event){
+                console.log(event);
+                selectedimp = event.target;
+            });
+            thisinput.addEventListener("keydown", function(event){
+                console.log(event.keyCode);
+                if(isLetter(String.fromCharCode(event.keyCode))){
+                    event.preventDefault();
+                    addtoinput(selectedimp,String.fromCharCode(event.keyCode));
+                    console.log(keyCounter);
+                }
+            });
+        }
+    }
+    var keyCounter = 0;
+
+    function addtoinput(inp, key){
+        if(keyCounter == 1){
+            inp.value += key.toUpperCase();
+            keyCounter = 0;
+        }else{
+            inp.value += key.toLowerCase();
+            keyCounter = 1;
+        }
+    }
 }

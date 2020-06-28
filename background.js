@@ -1,7 +1,7 @@
 'use strict';
 
 chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({yesno: 1}, function() {
+    chrome.storage.sync.set({yesno: 2}, function() {
     });
 });
 

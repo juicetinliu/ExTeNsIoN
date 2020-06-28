@@ -6,7 +6,7 @@
     "author": "Justin Liu",
     
     "browser_action": {
-        "default-icon": "IcOn1.png",
+        "default-icon": "IcOn2.png",
         "default_title": "hEhE"
     },
 
