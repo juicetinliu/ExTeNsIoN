@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "HeHe",
+    "description": "MaKe WoRdS GrEaT AgAiN",
+    "version": "1.0",
+    "author": "Justin Liu",
+    
+    "browser_action": {
+        "default-icon": "IcOn1.png",
+        "default_title": "hEhE"
+    },
+
+
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": ["storage", "activeTab"],
+
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
