@@ -6,10 +6,9 @@
     "author": "Justin Liu",
     
     "browser_action": {
-        "default-icon": "IcOn2.png",
         "default_title": "hEhE"
     },
-
+    "web_accessible_resources": ["hehe.png"],
 
     "background": {
         "scripts": ["background.js"],

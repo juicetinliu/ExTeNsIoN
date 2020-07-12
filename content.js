@@ -6,6 +6,13 @@ chrome.storage.sync.get('yesno', function(data) {
     if(current == 1){
         transformtext();
         transformtype();
+        // setBackground();
+        resetTimer();
+        attachscaryimage();
+
+        setTimeout(function(){transformtext();}, 3000);
+        setTimeout(function(){transformtype();}, 3000);
+        // setTimeout(function(){transformimages();}, 3000);
     }
 });
 
@@ -44,6 +51,33 @@ function transformtext(){
         }
     }
 }
+
+function removeBackground(){
+    document.body.style.backgroundImage = "none";
+}
+
+function setBackground(){
+    document.body.style.backgroundImage = "url('" + chrome.extension.getURL('hehe.png') + "')";
+    setTimeout(removeBackground, 100);
+}
+
+function attachscaryimage(){
+    window.addEventListener('mousemove', e => {resetTimer();});
+    window.addEventListener('keypress', e => {resetTimer();});
+}
+
+var time;
+    
+function logout() {
+    setBackground();
+}
+
+function resetTimer() {
+    clearTimeout(time);
+    time = setTimeout(logout, 1000)
+    // 1000 milliseconds = 1 second
+}
+
 
 function isLetter(str) {
     return str.length === 1 && str.match(/[a-z]/i);
