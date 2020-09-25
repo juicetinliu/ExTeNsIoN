@@ -8,7 +8,7 @@ chrome.storage.sync.get('yesno', function(data) {
         transformtype();
         // setBackground();
         resetTimer();
-        attachscaryimage();
+        // attachscaryimage();
 
         setTimeout(function(){transformtext();}, 3000);
         setTimeout(function(){transformtype();}, 3000);
