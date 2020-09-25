@@ -14,6 +14,7 @@ MaKe yOuR WeBpAgEs GrEaT AgAiN
 
 5. Make sure the icon is visible in your chrome toolbar
 
-6. EnJoY
+6. EnJoY (Reload pages for the extension to take effect)
 
-To turn off this extension: Click the extension icon until a lion icon is seen
+To turn **ON** this extension: Click the extension icon until an emoji icon is seen
+To turn **OFF** this extension: Click the extension icon until a lion icon is seen
