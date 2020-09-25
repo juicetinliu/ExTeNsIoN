@@ -16,5 +16,7 @@ MaKe yOuR WeBpAgEs GrEaT AgAiN
 
 6. EnJoY (Reload pages for the extension to take effect)
 
+## Notes
 To turn **ON** this extension: Click the extension icon until an emoji icon is seen
+
 To turn **OFF** this extension: Click the extension icon until a lion icon is seen
